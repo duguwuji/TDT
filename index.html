@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf8" />
-<title>GS1 TDS / TDT 2.x 编码器</title>
+<title>GS1 TDS / TDT 2.x 编解码器</title>
 <script type="text/javascript" src="jszip-utils.js"></script>
 <script type="text/javascript" src="jszip.js"></script>
 <script type="text/javascript" src="TDTtranslator.js"></script>
@@ -34,9 +34,9 @@ code {color:#000000}
 <body>
 
 	<div class="contents">
-	<h1>GS1 EPC TDS / TDT 2.x 编码器 </h1>
+	<h1>GS1 EPC TDS / TDT 2.x 编解码器 </h1>
 	
-	<p>可接收的输入形式:
+	<p>可以使用的输入形式:
 		<ul>
 			<li>GS1 AI String in JSON e.g. <code>{"01":"09521234123453", "21":"32a/b"}</code></li>
 			<li>GS1 Digital Link URI e.g. <code>https://id.gs1.org/01/09521234123453/21/32a%2Fb</code></li>
@@ -51,6 +51,8 @@ code {color:#000000}
 	<div class="right"><label for="inputString">输入</label></div><div><input id="inputString" type="text" style="width: calc(100% - 10px)" /></div>
 	<div class="right"><label for="filter">Filter</label></div><div><input id="filter" type="number" value="0" min="0" max="7" /></div>
 	<div class="right"><label for="gcpLength">GCP 长度</label></div><div><input id="gcpLength" type="number" value="7" min="6" max="12" /> <span id="gcpMessage"></span></div>
+	<div class="right"><label for="gcpOverride">使用输入的 GCP 长度</label></div><div><input type="checkbox" id="gcpOverride" /> (in place of auto-detected GCP length)</div>
+	<div class="right"><label for="uristem">GS1 数字链接 URI 词干</label></div><div><input id="uristem" value="https://id.gs1.org" type="text" /></div>
 	<div></div><div><input id="encodebutton" type="button" disabled="disabled" value="编解码"/></div>
 	</div>
 	<div id="output"></div>
